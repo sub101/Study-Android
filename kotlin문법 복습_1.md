@@ -110,3 +110,66 @@ one.add(20) // one[1]
 var hap = one.get(0) + one.get(1) //30
 
 ### 4. 반복문 : for, while
+
+##### for
+
+- <가장 많이 사용되는 for문 형식>
+
+for(변수 in 시작..끝 step 증가량){
+    //이 부분 반복
+}
+
+- <배열의 개수만큼 변수에 대입하여 반복하는 방법>
+
+for(변수 in 배열명.indices){
+    //indices : index의 복수형
+    //이 부분 반복
+}
+
+ex) var one : IntArray = intArrayOf(10,20,30,40)
+    var two : Array<String> = arrayOf("a","b","c")
+
+    for(i in one.indices){
+        println(one[i])
+    }
+
+- <배열 사용시 i없이 바로 배열의 값을 하나씩 처리>
+for(변수 in 배열명){
+    //이 부분에서 변수 사용
+}    
+
+##### while
+while(조건식){
+    //true인 동안 반복실행
+}
+
+
+### 5.메소드와 전역변수, 지역변수
+
+##### 메소드
+기본 메소드인 main()함수 외에 사용자가 메소드를 추가로 생성 가능.
+
+ex) fun add(num1 : Int, num2 : Int) : Int {
+    var hap : Int
+    hap = num1 + num2
+    return hap
+}
+
+##### 전역변수 & 지역변수
+전역변수, 모든 메소드에서 사용됨. // main 함수 밖에 선언
+지역변수, 메소드 내부에서만 사용됨.
+전역변수와 지역변수 이름 같아도 됨 -> 보통 지역변수 참조
+
+
+
+### 6. 예외 처리 : try ~ catch
+ex) fun main(){
+    var num1 : Int = 100
+    var num2 : Int = 0
+
+    try{
+        println(num1/num2)
+    }catch(e : ArithmeticException){
+        println("계산에 문제가 있습니다")
+    }    
+}
