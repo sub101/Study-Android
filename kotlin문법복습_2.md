@@ -28,8 +28,26 @@ fun main(){
 
 단, 매개변수 다르게 함.
 
+ex) class Car {
+    var color : String = ""
+    var speed : Int = 0
+
+    constructor(color : String, speed : Int){
+        this.color = color
+        this.speed = speed
+    }
+
+    constructor(speed : Int) {
+        this.speed = speed
+    }
+
+    constructor(){
+
+    }
+}
 
 ### 4. 정적 필드, 정적 메소드, 상수 필드
+정적 필드 : 인스턴스를 생성하지 않고 클래스 자체에서 사용되는 변수가 필요
 
 ### 5. 클래스 상속과 메소드 오버라이딩
 
