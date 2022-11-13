@@ -61,6 +61,36 @@ ex) class Car {
 클래스 상속 : 기존의 클래스가 가지고 있는 것을 그대로 물려받으면서 필요한 필드나 메소드를 추가로 정의하는 것
 - open을 써야 상속 받을 수 O 
 
+메소드 오버라이딩 : 부모 {클래스의 메소드를 무시하고 새로 정의
+
+ex) open class Car{ //클래스 상속 허용을 위한 open
+    ...
+    open fun upSpeed(value : Int){ //메소드 오버라이딩을 허용하기 위한 open
+        if(speed+value>=200){
+            ...
+    }
+}
+
+class Automobile : Car {
+    var seatNum : Int = 0
+
+    constructor(){
+
+    }
+
+    fun countSeatNum() : Int {
+        return seatNum
+    }
+
+    override fun upSpeed(value: Int){
+        if(speed+value>=300){ //내용 바꿈
+            ...
+        }
+    }
+}
+
+ex2) 
+
 ### 6. 추상 클래스와 추상 메소드
 
 ### 7. 클래스 변수의 다형성
