@@ -89,9 +89,49 @@ class Automobile : Car {
     }
 }
 
-ex2) 
+ex2) fun main() {
+    var auto : Automobile = Automobile()
+    // 객체 생성 및 선언 (Automobile() : 생성자)
+    //클래스로 인스턴스 생성 (상속 받음)
+
+    auto.upspeed(250)
+}
 
 ### 6. 추상 클래스와 추상 메소드
+
+추상클래스 = 인스턴스화를 금지하는 클래스 (클래스로 인스턴스 생성하는 것)
+- abstract 키워드 붙여서 지정
+- 추상메소들르 포함하는 클래스는 추상 클래스로 지정해야
+- 추상클래스 & 추상메소드 목적
+: 공통적으로 사용되는 기능을 추상 메소드로 선언해놓고, 추상 클래스를 상속받은 후에 반드시 추상 메소드를 오버라이딩해서 사용하기위함.
+- 추상메소드를 오버라이딩 하는 것 = 추상메소드를 구현한다
+
+ex) abstract class Animal {
+    var name : String = ""
+    abstract fun move()
+}
+
+class Tiger : Animal(){ //괄호 O
+   var age : Int =0 //필드는 조정가능
+   override fun move() {
+       println("네 발로 이동")
+   }
+}
+
+class Eagle : Animal(){
+    var home : String = ""
+    override fun move() {
+        println("날개로 날아간다")
+    }
+}
+
+fun main() {
+    var tiger1 = Tiger()
+    var Eagle1 = Eagle()
+
+    tiger1.move()
+    eagle1.move()
+}
 
 ### 7. 클래스 변수의 다형성
 
