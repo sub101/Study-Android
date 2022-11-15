@@ -3,7 +3,9 @@
 클래스 = 변수(필드)와 메소드로 구성
 객체지향 관점에서, 클래스를 실세계의 객체들이 가질 수 있는 상태와 행동으로 정의.
 
-ex) class Person{
+<ex>
+
+class Person{
     ...
 }
 
@@ -14,7 +16,9 @@ fun main(){
 ### 2. 생성자
 ##### constructor() 메소드를 사용하고 필요하다면 파라미터 지정 가능.
 
-ex) constructor(job : String, age : Int){
+<ex>
+
+ constructor(job : String, age : Int){
     this.color = color // 지역변수에 전역변수 대입
     this.speen = speed
 }
@@ -29,7 +33,9 @@ fun main(){
 
 단, 매개변수 다르게 함.
 
-ex) class Car {
+<ex>
+
+ class Car {
     var color : String = ""
     var speed : Int = 0
 
@@ -63,7 +69,9 @@ ex) class Car {
 
 메소드 오버라이딩 : 부모 {클래스의 메소드를 무시하고 새로 정의
 
-ex) open class Car{ //클래스 상속 허용을 위한 open
+<ex>
+
+ open class Car{ //클래스 상속 허용을 위한 open
     ...
     open fun upSpeed(value : Int){ //메소드 오버라이딩을 허용하기 위한 open
         if(speed+value>=200){
@@ -89,7 +97,8 @@ class Automobile : Car {
     }
 }
 
-ex2) fun main() {
+<ex>
+ fun main() {
     var auto : Automobile = Automobile()
     // 객체 생성 및 선언 (Automobile() : 생성자)
     //클래스로 인스턴스 생성 (상속 받음)
@@ -106,7 +115,8 @@ ex2) fun main() {
 : 공통적으로 사용되는 기능을 추상 메소드로 선언해놓고, 추상 클래스를 상속받은 후에 반드시 추상 메소드를 오버라이딩해서 사용하기위함.
 - 추상메소드를 오버라이딩 하는 것 = 추상메소드를 구현한다
 
-ex) abstract class Animal {
+<ex>
+ abstract class Animal {
     var name : String = ""
     abstract fun move()
 }
@@ -137,7 +147,8 @@ fun main() {
 다형성 : 서브클래스에서 생성한 인스턴스를 자신의 클래스 변수에 대입할 수 있음
 다형성을 이용해, 하나의 변수에 여러 종류의 인스턴스를 대입할 수 O
 
-ex) fun main(){
+<ex>
+ fun main(){
     //Animal : 추상클래스
     //Tiger, Eale : Animal 상속받은 서브클래스
 
@@ -161,7 +172,8 @@ ex) fun main(){
 - kotlin, 다중 상속 지원하지 않음
 - 인터페이스는  '구현한다'고 표현
 
-ex) abstract class Animal {
+<ex>
+ abstract class Animal {
     var name : String = ""
     abstract fun move()
 }
@@ -207,7 +219,8 @@ fun main() {
 - 내용 중 마지막 문장이 return값
 - 오른쪽 문장이 여러개시 ;으로 구분
 
-ex) fun addNum (n1 : Int, n2: Int){
+<ex>
+ fun addNum (n1 : Int, n2: Int){
     return n1 + n2
 }
 
