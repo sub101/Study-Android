@@ -134,7 +134,81 @@ fun main() {
 }
 
 ### 7. 클래스 변수의 다형성
+다형성 : 서브클래스에서 생성한 인스턴스를 자신의 클래스 변수에 대입할 수 있음
+다형성을 이용해, 하나의 변수에 여러 종류의 인스턴스를 대입할 수 O
+
+ex) fun main(){
+    //Animal : 추상클래스
+    //Tiger, Eale : Animal 상속받은 서브클래스
+
+    var animal : Animal
+    //데이터 형식만 지정 (값 아직 지정 X)
+
+    animal = Tiger() //<- 값
+    animal.move
+    // 네 발로 이동한다.
+
+    animal = Eagle() //<- 값
+    animal.move()
+    //날개로 날아간다.
+    //동일한 변수명으로 객체 받아 사용
+}
 
 ### 8. 인터페이스와 다중 상속
+- interface 키워드로 정의
+- 내부에는 추상 메소드 선언
+- 상속과 마찬가지로 클래스에서 인터페이스를 받아 완성할 때 ': 인터페이스 이름' 형식
+- kotlin, 다중 상속 지원하지 않음
+- 인터페이스는  '구현한다'고 표현
+
+ex) abstract class Animal {
+    var name : String = ""
+    abstract fun move()
+}
+
+interface iAnimal {
+    abstract fun eat()
+}
+
+class iCat : iAmimal {
+    overrride fun eat() {
+        println("생선을 좋아함")
+    }
+}
+
+class iTiger : Animal(),iAnimal {
+    //추상클래스와 인터페이스 (추상클래스는 괄호O , 인터페이스는 괄호X)
+    override fun move(){
+        println("네 발로 이동")
+    }
+
+    override fun eat(){
+        println("육식이다")
+    }
+}
+
+fun main() {
+    var cat = iCat()
+    cat.eat()
+
+    var tiger = iTiger()
+    tiger.move()
+    tiger.eat()
+}
 
 ### 9. 람다식
+
+: 함수를 익명 함수 형태로 간단히 표현
+- 람다는 {} 안에 매개변수와 메소드의 모든 내용을 선언
+
+[람다식 특징]
+- 람다식은 {}로 감싼다.
+- {}안 ->의 왼쪽은 파라미터/ 오른쪽은 함수의 내용
+- 내용 중 마지막 문장이 return값
+- 오른쪽 문장이 여러개시 ;으로 구분
+
+ex) fun addNum (n1 : Int, n2: Int){
+    return n1 + n2
+}
+
+// val addNum = {n1: Int,n2:Int -> n1 + n2} 과 동일
